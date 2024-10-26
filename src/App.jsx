@@ -246,7 +246,7 @@ const Portfolio = () => {
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-6xl  text-white font-bold"
+                className="text-6xl sm:text-xl md:text-2xl text-white font-bold"
               >
                 Hi,
                 <br />
