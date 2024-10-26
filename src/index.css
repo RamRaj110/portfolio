@@ -7,6 +7,10 @@ body {
   font-family:"Playfair Display", serif
 }
 
+html {
+  scroll-padding-top: 20px; 
+  scroll-behavior: smooth;
+}
 .transform-origin-left {
   transform-origin: left;
 }

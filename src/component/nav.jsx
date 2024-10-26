@@ -1,5 +1,3 @@
-
-
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -10,11 +8,25 @@ const Nav = () => {
     setIsOpen(!isOpen);
   };
 
+  // Add smooth scrolling function
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false); // Close mobile menu after clicking
+    }
+  };
+
   return (
-    <nav className="fixed top-0 w-4/5  mx-4">
+    <nav className="fixed top-0 w-4/5 mx-4">
       <div className="flex items-center justify-between text-white py-2 my-4">
         <div className="text-xl font-bold">
-          <a href="#home" className="portfolio-link">PAWAN</a>
+          <button 
+            onClick={() => scrollToSection('home')} 
+            className="portfolio-link"
+          >
+            PAWAN
+          </button>
         </div>
         
         {/* Mobile Menu Button */}
@@ -29,29 +41,44 @@ const Nav = () => {
         <div className="hidden lg:block">
           <ul className="flex items-center text-white space-x-4 text-xl font-bold">
             <li>
-              <a href="#home" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
+              <button 
+                onClick={() => scrollToSection('home')}
+                className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              >
                 Home
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#about" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
+              <button 
+                onClick={() => scrollToSection('about')}
+                className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              >
                 About
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#skills" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
+              <button 
+                onClick={() => scrollToSection('skills')}
+                className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              >
                 Skills
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#skills" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
+              <button 
+                onClick={() => scrollToSection('project')}
+                className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              >
                 Project
-              </a>
+              </button>
             </li>
             <li>
-              <a href="#contact" className="nav-link  text-white hover:text-gray-600 transition duration-300 ease-in-out">
+              <button 
+                onClick={() => scrollToSection('contact')}
+                className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              >
                 Contact
-              </a>
+              </button>
             </li>
           </ul>
         </div>
@@ -61,49 +88,44 @@ const Nav = () => {
       <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
         <ul className="flex flex-col items-center space-y-4 text-xl font-bold bg-black/90 py-4 absolute w-full">
           <li>
-            <a 
-              href="#home" 
+            <button 
+              onClick={() => scrollToSection('home')}
               className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
-              onClick={toggleMenu}
             >
               Home
-            </a>
+            </button>
           </li>
           <li>
-            <a 
-              href="#about" 
+            <button 
+              onClick={() => scrollToSection('about')}
               className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
-              onClick={toggleMenu}
             >
               About
-            </a>
+            </button>
           </li>
           <li>
-            <a 
-              href="#skills" 
+            <button 
+              onClick={() => scrollToSection('skills')}
               className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
-              onClick={toggleMenu}
             >
               Skills
-            </a>
+            </button>
           </li>
           <li>
-            <a 
-              href="#skills" 
+            <button 
+              onClick={() => scrollToSection('project')}
               className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
-              onClick={toggleMenu}
             >
               Project
-            </a>
+            </button>
           </li>
           <li>
-            <a 
-              href="#contact" 
+            <button 
+              onClick={() => scrollToSection('contact')}
               className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
-              onClick={toggleMenu}
             >
               Contact
-            </a>
+            </button>
           </li>
         </ul>
       </div>
