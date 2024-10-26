@@ -204,7 +204,7 @@ const Portfolio = () => {
       description:
         "A dynamic and engaging portfolio showcasing my journey as a frontend developer, highlighting my skills in React, responsive design, and interactive web applications.",
       tech: ["React", "TaiwindCSS"],
-      image: "./public/portfolio.png",
+      image: "/public/portfolio.png",
       link: "#home",
     },
     {
@@ -212,7 +212,7 @@ const Portfolio = () => {
       description:
         "Frontend developer for a college website chatbot, creating a user-friendly interface for seamless interaction.",
       tech: ["VanilaJs", "Python", "Flask", "CSS"],
-      image: "../public/cc.png",
+      image: "/public/cc.png",
       link: "https://gitlab.com/edubot3/Chatbot",
     },
     {
@@ -220,7 +220,7 @@ const Portfolio = () => {
       description:
         "Responsive weather app displaying real-time forecasts using API integration, with a sleek and intuitive interface.",
       tech: ["VanilaJs", "OpenWeather API", "CSS"],
-      image: "./public/weather.png",
+      image: "/public/weather.png",
       link: "https://ramraj110.github.io/Weather-App/",
     },
   ];
@@ -239,15 +239,15 @@ const Portfolio = () => {
       <Animation />
 
       {/* Hero Section */}
-      {/* <section className="relative min-h-screen flex items-center">
+      <section className="relative min-h-screen flex items-center">
         <div className="container mx-auto px-4 z-10">
           <Nav />
-          <div className="flex flex-col md:flex-row items-center justify-between my-24">
-            <div className="md:w-1/2 space-y-6">
+          <div className="flex flex-col md:flex-row items-center justify-between my-24 md:mt-24">
+            <div className="md:w-1/2 space-y-6 md:space-y-6 md:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                className="text-6xl text-white font-bold"
+                className="text-6xl text-white sm:text-5xl md:text-6xl font-bold"
               >
                 Hi,
                 <br />
@@ -263,7 +263,7 @@ const Portfolio = () => {
                   {roles[roleIndex]}
                 </motion.span>
               </motion.h1>
-              <div className="flex space-x-4">
+              <div className="flex sm:flex-row space-x-4 sm:space-y-0 sm:space-x-4 md:justify-start">
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -290,7 +290,7 @@ const Portfolio = () => {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                className="flex space-x-6 px-4 text-blue-500 mt-8"
+                className="flex space-x-6 px-4 md:justify-start text-blue-500 md:mt-8 mt-8"
               >
                 <div className="flex ">
                   <a
@@ -306,29 +306,29 @@ const Portfolio = () => {
               </motion.div>
             </div>
 
-            {/* Enhanced Right side with image effects 
+            {/* Enhanced Right side with image effects  */}
             <motion.div
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
-              className="md:w-1/2 mt-12 md:mt-0"
+              className=" w-full md:w-1/2 mt-12 md:mt-0"
             >
-              <div className="relative w-80 h-80 mx-auto">
-                {/* Animated background rings *
+              <div className="relative w-80 h-80 sm:w-72 sm:h-72 md:w-80 md:h-80  mx-auto">
+                 {/* Animated background rings * */}
                 <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
                 <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />
 
-                {/* Gradient background *
+                {/* Gradient background * */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-lg animate-pulse" />
 
-                {/* Rotating border *
+                 {/* Rotating border * */}
                 <div className="absolute inset-0 rounded-full border-2 border-blue-500/50 animate-spin-slow" />
 
-                {/* Glowing dots *
+                 {/* Glowing dots * */}
                 <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full blur-sm animate-pulse" />
                 <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-purple-400 rounded-full blur-sm animate-pulse" />
 
-                {/* Main image container *
+                 {/* Main image container * */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/30 p-1">
                   <img
                     src="../public/heropic.png"
@@ -336,131 +336,16 @@ const Portfolio = () => {
                     className="w-full h-full object-cover rounded-full"
                   />
 
-                  {/* Overlay shine effect *
+                  {/* Overlay shine effect * */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shine" />
                 </div>
               </div>
             </motion.div>
           </div>
         </div>
-      </section> */}
+      </section>
 
-<section className="relative min-h-screen flex items-center py-8 md:py-0">
-      <div className="container mx-auto px-4 z-10">
-        <Nav />
-        <div className="flex flex-col md:flex-row items-center justify-between mt-8 md:mt-24">
-          {/* Left side - Text content */}
-          <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              className="text-4xl sm:text-5xl md:text-6xl text-white font-bold"
-            >
-              Hi,
-              <br />
-              I'm <span className="text-blue-600">Developer</span>
-              <br />
-              <motion.span
-                key={roleIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                className="inline-block"
-              >
-                {roles[roleIndex]}
-              </motion.span>
-            </motion.h1>
 
-            {/* Buttons */}
-            <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-colors flex items-center justify-center space-x-2"
-                onClick={() =>
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" })
-                }
-              >
-                <Send className="w-5 h-5" />
-                <span>Hire Me</span>
-              </motion.button>
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
-                onClick={handleResumeDownload}
-              >
-                <Download className="w-5 h-5" />
-                <span>Resume</span>
-              </motion.button>
-            </div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="flex justify-center md:justify-start space-x-6 text-blue-500 mt-6 md:mt-8"
-            >
-              <div className="flex">
-                <a
-                  href="https://www.linkedin.com/in/pawan-kumar-b1427a244/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mx-4 first:ml-0"
-                >
-                  <Linkedin className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
-                </a>
-                <a
-                  href="https://github.com/RamRaj110"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Github className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
-                </a>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Right side - Image */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5 }}
-            className="w-full md:w-1/2 mt-12 md:mt-0"
-          >
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto">
-              {/* Animated background rings */}
-              <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
-              <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />
-
-              {/* Gradient background */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-lg animate-pulse" />
-
-              {/* Rotating border */}
-              <div className="absolute inset-0 rounded-full border-2 border-blue-500/50 animate-spin-slow" />
-
-              {/* Glowing dots */}
-              <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full blur-sm animate-pulse" />
-              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-purple-400 rounded-full blur-sm animate-pulse" />
-
-              {/* Main image container */}
-              <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/30 p-1">
-                <img
-                  src="/heropic.png"
-                  alt="Profile"
-                  className="w-full h-full object-cover rounded-full"
-                />
-
-                {/* Overlay shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shine" />
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-    </section>
 
       {/* About Section */}
       <About />
