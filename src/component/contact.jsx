@@ -30,14 +30,14 @@ function Contact() {
 
     try {
       await emailjs.send(
-        'service_idv40zx', // Replace with your EmailJS service ID
-        'template_xx15gbu', // Replace with your EmailJS template ID
+        'service_idv40zx', // EmailJS service ID
+        'template_xx15gbu', // EmailJS template ID
         {
           from_name: formData.name,
           from_email: formData.email,
           message: formData.message,
         },
-        'ARRv8mRO41VbPng8t' // Replace with your EmailJS public key
+        'ARRv8mRO41VbPng8t' //  EmailJS public key
       );
 
       setStatus({ loading: false, error: null, success: true });
