@@ -242,7 +242,7 @@ const Portfolio = () => {
           <Nav />
           <div className="flex flex-col md:flex-row items-center justify-between  md:mt-24">
             {/* Left side - Text content */}
-            <div className="w-full md:w-1/2 sm:text-4xl  space-y-4 md:space-y-6 text-center md:text-left">
+            <div className="w-full md:w-1/2 sm:text-xl  space-y-4 md:space-y-6 text-center md:text-left">
               <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
