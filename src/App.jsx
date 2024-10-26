@@ -204,7 +204,7 @@ const Portfolio = () => {
       description:
         "A dynamic and engaging portfolio showcasing my journey as a frontend developer, highlighting my skills in React, responsive design, and interactive web applications.",
       tech: ["React", "TaiwindCSS"],
-      image: "/public/portfolio.png",
+      image: "/portfolio.png",
       link: "#home",
     },
     {
@@ -212,7 +212,7 @@ const Portfolio = () => {
       description:
         "Frontend developer for a college website chatbot, creating a user-friendly interface for seamless interaction.",
       tech: ["VanilaJs", "Python", "Flask", "CSS"],
-      image: "/public/cc.png",
+      image: "/cc.png",
       link: "https://gitlab.com/edubot3/Chatbot",
     },
     {
@@ -220,7 +220,7 @@ const Portfolio = () => {
       description:
         "Responsive weather app displaying real-time forecasts using API integration, with a sleek and intuitive interface.",
       tech: ["VanilaJs", "OpenWeather API", "CSS"],
-      image: "./public/weather.png",
+      image: "/weather.png",
       link: "https://ramraj110.github.io/Weather-App/",
     },
   ];
@@ -248,7 +248,7 @@ const Portfolio = () => {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl sm:text-2xl md:text-4xl text-white font-bold"
+              className="text-4xl sm:text-2xl md:text-2xl text-white font-bold"
             >
               Hi,
               <br />

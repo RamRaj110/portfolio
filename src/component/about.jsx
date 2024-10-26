@@ -80,7 +80,7 @@ function About() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-70" />
             <img
-              src="/public/heropic.png"
+              src="/heropic.png"
               alt="About Me"
               className="relative rounded-full w-full h-full object-cover border-4 border-white"
             />
