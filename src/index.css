@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family:"Playfair Display", serif
+}
+
+.transform-origin-left {
+  transform-origin: left;
+}
+
+@keyframes travel {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(calc(100% - 8px)) translateY(0);
+  }
+  50% {
+    transform: translateX(calc(100% - 8px)) translateY(calc(100% - 8px));
+  }
+  75% {
+    transform: translateX(0) translateY(calc(100% - 8px));
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+.animate-travel {
+  animation: travel 4s linear infinite;
+}
+
+
+
+/* Add these custom animations to your CSS/Tailwind config */
+
+  @keyframes ping-slow {
+    75%, 100% {
+      transform: scale(1.2);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes spin-slow {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes shine {
+    from {
+      transform: rotate(0deg) translate(-75%) rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg) translate(-75%) rotate(-360deg);
+    }
+  }
+  
+  .animate-ping-slow {
+    animation: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 20s linear infinite;
+  }
+  
+  .animate-shine {
+    animation: shine 8s linear infinite;
+  }
