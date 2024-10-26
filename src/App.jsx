@@ -234,126 +234,122 @@ const Portfolio = () => {
       <Animation />
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center py-2 md:py-0"
+      <section id="home" className="relative min-h-screen flex items-center py-4 px-4 sm:py-6 md:py-0">
+  <div className="container mx-auto z-10">
+    <Nav />
+    <div className="flex flex-col md:flex-row items-center justify-between mt-16 md:mt-24">
+      {/* Left side - Text content */}
+      <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-bold"
+        >
+          Hi,
+          <br />
+          I'm <span className="text-blue-600">Developer</span>
+          <br />
+          <motion.span
+            key={roleIndex}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="inline-block text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+          >
+            {roles[roleIndex]}
+          </motion.span>
+        </motion.h1>
+
+        {/* Buttons */}
+        <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8">
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="w-full sm:w-auto bg-blue-600 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-full hover:bg-blue-800 transition-colors flex items-center justify-center space-x-2"
+            onClick={() =>
+              document
+                .getElementById("contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <Send className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span>Hire Me</span>
+          </motion.button>
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="w-full sm:w-auto bg-gray-700 text-white px-4 sm:px-6 py-2 sm:py-3 text-sm sm:text-base rounded-full hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
+            onClick={handleResumeDownload}
+          >
+            <Download className="w-4 h-4 sm:w-5 sm:h-5" />
+            <span>Resume</span>
+          </motion.button>
+        </div>
+
+        {/* Social Links */}
+        <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className="flex justify-center md:justify-start space-x-6 text-blue-500 mt-6 px-4 md:mt-8"
       >
-        <div className="container mx-auto px-4 z-10">
-          <Nav />
-          <div className="flex flex-col md:flex-row items-center justify-between  md:mt-24">
-            {/* Left side - Text content */}
-            <div className="w-full md:w-1/2 sm:text-xl  space-y-4 md:space-y-6 text-center md:text-left">
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="text-6xl sm:text-xl md:text-2xl text-white font-bold"
-              >
-                Hi,
-                <br />
-                I'm <span className="text-blue-600">Developer</span>
-                <br />
-                <motion.span
-                  key={roleIndex}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  className="inline-block"
-                >
-                  {roles[roleIndex]}
-                </motion.span>
-              </motion.h1>
+        <div className="flex">
+          <a
+            href="https://www.linkedin.com/in/pawan-kumar-b1427a244/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mx-4 first:ml-0"
+          >
+            <Linkedin className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
+          </a>
+          <a
+            href="https://github.com/RamRaj110"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Github className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
+          </a>
+        </div>
+      </motion.div>
+      </div>
 
-              {/* Buttons */}
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="bg-blue-600 text-white px-6 py-3 rounded-full hover:bg-blue-800 transition-colors flex items-center justify-center space-x-2"
-                  onClick={() =>
-                    document
-                      .getElementById("contact")
-                      ?.scrollIntoView({ behavior: "smooth" })
-                  }
-                >
-                  <Send className="w-5 h-5 " />
-                  <span>Hire Me</span>
-                </motion.button>
-                <motion.button
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  className="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
-                  onClick={handleResumeDownload}
-                >
-                  <Download className="w-5 h-5  " />
-                  <span>Resume</span>
-                </motion.button>
-              </div>
+      {/* Right side - Image */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.5 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.5 }}
+        className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center"
+      >
+        <div className="relative w-48 h-48 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
+          {/* Animated background rings */}
+          <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
+          <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />
 
-              {/* Social Links */}
-              <motion.div
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                className="flex justify-center md:justify-start space-x-6 text-blue-500 mt-6 px-4 md:mt-8"
-              >
-                <div className="flex">
-                  <a
-                    href="https://www.linkedin.com/in/pawan-kumar-b1427a244/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mx-4 first:ml-0"
-                  >
-                    <Linkedin className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
-                  </a>
-                  <a
-                    href="https://github.com/RamRaj110"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Github className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
-                  </a>
-                </div>
-              </motion.div>
-            </div>
+          {/* Gradient background */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-lg animate-pulse" />
 
-            {/* Right side - Image */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.5 }}
-              className="w-full md:w-1/2 mt-12 md:mt-0"
-            >
-              <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 mx-auto">
-                {/* Animated background rings */}
-                <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
-                <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />
+          {/* Rotating border */}
+          <div className="absolute inset-0 rounded-full border-2 border-blue-500/50 animate-spin-slow" />
 
-                {/* Gradient background */}
-                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-lg animate-pulse" />
+          {/* Glowing dots */}
+          <div className="absolute -top-2 -right-2 w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full blur-sm animate-pulse" />
+          <div className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 bg-purple-400 rounded-full blur-sm animate-pulse" />
 
-                {/* Rotating border */}
-                <div className="absolute inset-0 rounded-full border-2 border-blue-500/50 animate-spin-slow" />
-
-                {/* Glowing dots */}
-                <div className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full blur-sm animate-pulse" />
-                <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-purple-400 rounded-full blur-sm animate-pulse" />
-
-                {/* Main image container */}
-                <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/30 p-1">
-                  <img
-                    src="/heropic.png"
-                    alt="Profile"
-                    className="w-full h-full object-cover rounded-full"
-                  />
-
-                  {/* Overlay shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shine" />
-                </div>
-              </div>
-            </motion.div>
+          {/* Main image container */}
+          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/30 p-1">
+            <img
+              src="/heropic.png"
+              alt="Profile"
+              className="w-full h-full object-cover rounded-full"
+            />
+            {/* Overlay shine effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shine" />
           </div>
         </div>
-      </section>
-
+      </motion.div>
+    </div>
+  </div>
+</section>
+     
       {/* About Section */}
       <section id="about">
         <About />
