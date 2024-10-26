@@ -220,7 +220,7 @@ const Portfolio = () => {
       description:
         "Responsive weather app displaying real-time forecasts using API integration, with a sleek and intuitive interface.",
       tech: ["VanilaJs", "OpenWeather API", "CSS"],
-      image: "/public/weather.png",
+      image: "./public/weather.png",
       link: "https://ramraj110.github.io/Weather-App/",
     },
   ];
@@ -248,7 +248,7 @@ const Portfolio = () => {
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-4xl sm:text-4xl md:text-5xl text-white font-bold"
+              className="text-4xl sm:text-2xl md:text-4xl text-white font-bold"
             >
               Hi,
               <br />
@@ -277,7 +277,7 @@ const Portfolio = () => {
                     ?.scrollIntoView({ behavior: "smooth" })
                 }
               >
-                <Send className="w-5 h-5" />
+                <Send className="w-5 h-5 sm:text-sm sm:w-3 sm:h-3" />
                 <span>Hire Me</span>
               </motion.button>
               <motion.button
@@ -286,7 +286,7 @@ const Portfolio = () => {
                 className="bg-gray-700 text-white px-6 py-3 rounded-full hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
                 onClick={handleResumeDownload}
               >
-                <Download className="w-5 h-5" />
+                <Download className="w-5 h-5  sm:text-sm sm:w-3 sm:h-3" />
                 <span>Resume</span>
               </motion.button>
             </div>

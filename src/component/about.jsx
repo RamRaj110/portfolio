@@ -64,21 +64,6 @@ function About() {
       <div className="max-w-6xl w-full bg-gray-900 mx-auto border-white border-t-2 py-12 px-4">
         <div className="flex flex-col items-center space-y-8">
           {/* Image Container with Animation */}
-          <motion.div 
-            className="relative w-64 h-64 mb-8"
-            initial={{ scale: 0.5, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-70" />
-            <img
-              src="../public/heropic.png"
-              alt="About Me"
-              className="relative rounded-full w-full h-full object-cover border-4 border-white"
-            />
-          </motion.div>
-
-          {/* Title with Animation */}
           <motion.h2 
             className="text-4xl font-bold text-white text-center"
             initial={{ y: -20, opacity: 0 }}
@@ -87,7 +72,19 @@ function About() {
           >
             About Me
           </motion.h2>
-
+          <motion.div 
+            className="relative w-64 h-64 mb-8"
+            initial={{ scale: 0.5, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur opacity-70" />
+            <img
+              src="/public/heropic.png"
+              alt="About Me"
+              className="relative rounded-full w-full h-full object-cover border-4 border-white"
+            />
+          </motion.div>
           {/* Text Content with Animation */}
           <motion.div 
             className="max-w-2xl space-y-6"
