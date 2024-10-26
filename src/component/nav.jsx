@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -9,8 +11,8 @@ const Nav = () => {
   };
 
   return (
-    <nav className="relative bg-transparent">
-      <div className="flex items-center justify-between text-white py-4 my-4">
+    <nav className="fixed top-0 w-4/5  mx-4">
+      <div className="flex items-center justify-between text-white py-2 my-4">
         <div className="text-xl font-bold">
           <a href="#home" className="portfolio-link">PAWAN</a>
         </div>
@@ -25,29 +27,29 @@ const Nav = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:block">
-          <ul className="flex items-center space-x-4 text-xl font-bold">
+          <ul className="flex items-center text-white space-x-4 text-xl font-bold">
             <li>
-              <a href="#home" className="nav-link hover:text-gray-900 transition duration-300 ease-in-out">
+              <a href="#home" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
                 Home
               </a>
             </li>
             <li>
-              <a href="#about" className="nav-link hover:text-gray-900 transition duration-300 ease-in-out">
+              <a href="#about" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
                 About
               </a>
             </li>
             <li>
-              <a href="#skills" className="nav-link hover:text-gray-900 transition duration-300 ease-in-out">
+              <a href="#skills" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
                 Skills
               </a>
             </li>
             <li>
-              <a href="#project" className="nav-link hover:text-gray-900 transition duration-300 ease-in-out">
+              <a href="#skills" className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out">
                 Project
               </a>
             </li>
             <li>
-              <a href="#contact" className="nav-link hover:text-gray-900 transition duration-300 ease-in-out">
+              <a href="#contact" className="nav-link  text-white hover:text-gray-600 transition duration-300 ease-in-out">
                 Contact
               </a>
             </li>
@@ -56,57 +58,55 @@ const Nav = () => {
       </div>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="lg:hidden fixed top-[88px] text-white left-0 right-0 bg-black/90">
-          <ul className="flex flex-col items-center space-y-4 text-xl font-bold py-4">
-            <li>
-              <a 
-                href="#home" 
-                className="nav-link hover:text-gray-900 transition duration-300 ease-in-out"
-                onClick={toggleMenu}
-              >
-                Home
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#about" 
-                className="nav-link hover:text-gray-900 transition duration-300 ease-in-out"
-                onClick={toggleMenu}
-              >
-                About
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#skills" 
-                className="nav-link hover:text-gray-900 transition duration-300 ease-in-out"
-                onClick={toggleMenu}
-              >
-                Skills
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#project" 
-                className="nav-link hover:text-gray-900 transition duration-300 ease-in-out"
-                onClick={toggleMenu}
-              >
-                Project
-              </a>
-            </li>
-            <li>
-              <a 
-                href="#contact" 
-                className="nav-link hover:text-gray-900 transition duration-300 ease-in-out"
-                onClick={toggleMenu}
-              >
-                Contact
-              </a>
-            </li>
-          </ul>
-        </div>
-      )}
+      <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
+        <ul className="flex flex-col items-center space-y-4 text-xl font-bold bg-black/90 py-4 absolute w-full">
+          <li>
+            <a 
+              href="#home" 
+              className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              onClick={toggleMenu}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#about" 
+              className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              onClick={toggleMenu}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#skills" 
+              className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              onClick={toggleMenu}
+            >
+              Skills
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#skills" 
+              className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              onClick={toggleMenu}
+            >
+              Project
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#contact" 
+              className="nav-link text-white hover:text-gray-600 transition duration-300 ease-in-out"
+              onClick={toggleMenu}
+            >
+              Contact
+            </a>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
