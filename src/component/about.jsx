@@ -26,7 +26,7 @@ function About() {
             <img
               src="/heropic.png"
               alt="About Me"
-              className="relative rounded-full w-full h-full object-cover border-4 border-white sm:hidden md:hidden"
+              className="relative rounded-full w-full h-full object-cover border-4 border-white "
             />
           </motion.div>
           {/* Text Content with Animation */}
