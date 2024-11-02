@@ -14,6 +14,25 @@ import "./index.css";
 // Constellation Background Component
 const ConstellationBackground = () => {
   const canvasRef = useRef(null);
+  // ----
+useEffect(() => {
+  function handleResize() {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+    
+    // Set actual pixel size
+    canvas.width = window.innerWidth * window.devicePixelRatio;
+    canvas.height = window.innerHeight * window.devicePixelRatio;
+    
+    // Set display size
+    canvas.style.width = `${window.innerWidth}px`;
+    canvas.style.height = `${window.innerHeight}px`;
+  }
+
+  handleResize();
+  window.addEventListener('resize', handleResize);
+  return () => window.removeEventListener('resize', handleResize);
+}, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -234,10 +253,7 @@ const Portfolio = () => {
       <Animation />
 
       {/* Hero Section */}
-      <section
-        id="home"
-        className="relative min-h-screen flex items-center py-4 px-4 sm:py-6 md:py-0"
-      >
+      <section id="home" className="relative min-h-screen flex items-center px-4 py-16 sm:py-20 md:py-0">
         <div className="container mx-auto z-10">
           <Nav />
           <div className="flex flex-col md:flex-row items-center justify-between mt-16 md:mt-4">
@@ -264,7 +280,8 @@ const Portfolio = () => {
               </motion.h1>
 
               {/* Buttons */}
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8">
+              {/* <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8"> */}
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8 px-4 sm:px-0">
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -322,7 +339,8 @@ const Portfolio = () => {
               transition={{ duration: 0.5 }}
               className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center"
             >
-              <div className="relative w-48 h-48 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80">
+              {/* <div className="relative w-48 h-48 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80"> */}
+              <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
                 {/* Animated background rings */}
                 <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
                 <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />

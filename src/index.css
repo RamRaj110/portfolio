@@ -2,15 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-
-body {
-  font-family:"Playfair Display", serif
+* {
+  box-sizing: border-box;
 }
 
-html {
+html, body {
+  font-family:"Playfair Display", serif;
+  overflow-x: hidden;
+  width: 100%;
+  -webkit-tap-highlight-color: transparent;
   scroll-padding-top: 20px; 
   scroll-behavior: smooth;
 }
+
+
+
+
 .transform-origin-left {
   transform-origin: left;
 }
