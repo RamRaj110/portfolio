@@ -56,8 +56,7 @@ function Contact() {
   return (
     <div>
       <section className="px-4 py-4 bg-gray-900" id="contact">
-        {/* <div className="max-w-6xl mx-auto border-white border-t-2 pt-4"> */}
-        <div className="max-w-6xl mx-auto  pt-4">
+        <div className="max-w-6xl mx-auto border-white border-t-2 pt-4">
           <motion.h2
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}

@@ -4,8 +4,7 @@ import { motion } from 'framer-motion';
 function About() {
   return (
     <section id='about' className='bg-gray-900 min-h-screen flex items-center justify-center'>
-      {/* <div className="max-w-6xl w-full bg-gray-900 mx-auto border-white border-t-2 py-12 px-4"> */}
-      <div className="max-w-6xl w-full bg-gray-900 mx-auto  py-12 px-4">
+      <div className="max-w-6xl w-full bg-gray-900 mx-auto border-white border-t-2 py-12 px-4">
         <div className="flex flex-col items-center space-y-8">
           {/* Image Container with Animation */}
           <motion.h2 

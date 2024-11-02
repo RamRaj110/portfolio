@@ -18,7 +18,6 @@ const Nav = () => {
   };
 
   return (
-    // <nav className="fixed top-0 w-4/5 mx-4">
     <nav className="fixed top-0 w-full px-4">
       <div className="flex items-center justify-between text-white py-2 my-4">
         <div className="text-xl font-bold">
@@ -86,8 +85,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Menu */}
-      {/* <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <ul className="flex flex-col items-center space-y-4 text-xl font-bold bg-zinc-800 py-4 absolute w-full"> */}
+     
         <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'} z-50`}>
         <ul className="flex flex-col items-center space-y-4 text-xl font-bold bg-zinc-800/95 backdrop-blur-sm py-4 absolute w-full left-0 right-0">
           <li>

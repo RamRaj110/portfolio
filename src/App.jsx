@@ -280,8 +280,7 @@ const Portfolio = () => {
               </motion.h1>
 
               {/* Buttons */}
-              {/* <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8"> */}
-              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8 px-4 sm:px-0">
+              <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4 justify-center md:justify-start mt-6 sm:mt-8">
                 <motion.button
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
