@@ -240,7 +240,7 @@ const Portfolio = () => {
       >
         <div className="container mx-auto z-10">
           <Nav />
-          <div className="flex flex-col md:flex-row items-center justify-between mt-16 md:mt-24">
+          <div className="flex flex-col md:flex-row items-center justify-between mt-16 md:mt-4">
             {/* Left side - Text content */}
             <div className="w-full md:w-1/2 space-y-4 md:space-y-6 text-center md:text-left">
               <motion.h1
