@@ -86,7 +86,7 @@ const Nav = () => {
 
       {/* Mobile Menu */}
       <div className={`lg:hidden ${isOpen ? 'block' : 'hidden'}`}>
-        <ul className="flex flex-col items-center space-y-4 text-xl font-bold bg-black/90 py-4 absolute w-full">
+        <ul className="flex flex-col items-center space-y-4 text-xl font-bold bg-zinc-800 py-4 absolute w-full">
           <li>
             <button 
               onClick={() => scrollToSection('home')}
