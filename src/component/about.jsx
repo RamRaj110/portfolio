@@ -21,7 +21,7 @@ export const About = () => {
             className="md:w-1/2 mb-8 md:mb-0"
           >
             <img
-              src="/about.jpg"
+              src="/aboutpic.jpg"
               alt="About Me"
               className="rounded-lg shadow-xl w-full max-w-md mx-auto md:mx-0 hidden md:block"
             />
