@@ -9,30 +9,31 @@ import { About } from "./component/about";
 import Skills from "./component/skills";
 import Project from "./component/project";
 import Contact from "./component/contact";
+import ScrollAnimation from './component/ScrollAnimation';
 import "./index.css";
 
 // Constellation Background Component
 const ConstellationBackground = () => {
   const canvasRef = useRef(null);
-  // ----
-useEffect(() => {
-  function handleResize() {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    
-    // Set actual pixel size
-    canvas.width = window.innerWidth * window.devicePixelRatio;
-    canvas.height = window.innerHeight * window.devicePixelRatio;
-    
-    // Set display size
-    canvas.style.width = `${window.innerWidth}px`;
-    canvas.style.height = `${window.innerHeight}px`;
-  }
 
-  handleResize();
-  window.addEventListener('resize', handleResize);
-  return () => window.removeEventListener('resize', handleResize);
-}, []);
+  useEffect(() => {
+    const handleResize = () => {
+      const canvas = canvasRef.current;
+      if (!canvas) return;
+
+      // Set actual pixel size
+      canvas.width = window.innerWidth * window.devicePixelRatio;
+      canvas.height = window.innerHeight * window.devicePixelRatio;
+
+      // Set display size
+      canvas.style.width = `${window.innerWidth}px`;
+      canvas.style.height = `${window.innerHeight}px`;
+    };
+
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -121,21 +122,14 @@ useEffect(() => {
 
     animate();
 
-    function handleResize() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
-    }
-
     function handleMouseMove(e) {
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     }
 
-    window.addEventListener("resize", handleResize);
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {
-      window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
@@ -147,6 +141,16 @@ useEffect(() => {
       style={{ zIndex: -1 }}
     />
   );
+};
+
+// Move the handleResumeDownload function outside the component
+const handleResumeDownload = () => {
+  const link = document.createElement("a");
+  link.href = "Resume.pdf";
+  link.download = "Resume.pdf";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 };
 
 // Main Portfolio Component
@@ -239,17 +243,9 @@ const Portfolio = () => {
     },
   ];
 
-  const handleResumeDownload = () => {
-    const link = document.createElement("a");
-    link.href = "Resume.pdf";
-    link.download = "Resume.pdf";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   return (
     <div>
+      <ConstellationBackground />
       <Animation />
 
       {/* Hero Section */}
@@ -338,30 +334,23 @@ const Portfolio = () => {
               transition={{ duration: 0.5 }}
               className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center"
             >
-              {/* <div className="relative w-48 h-48 xs:w-56 xs:h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80"> */}
               <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
-                {/* Animated background rings */}
                 <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
                 <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />
 
-                {/* Gradient background */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600/30 to-purple-600/30 blur-lg animate-pulse" />
 
-                {/* Rotating border */}
                 <div className="absolute inset-0 rounded-full border-2 border-blue-500/50 animate-spin-slow" />
 
-                {/* Glowing dots */}
                 <div className="absolute -top-2 -right-2 w-3 h-3 sm:w-4 sm:h-4 bg-blue-400 rounded-full blur-sm animate-pulse" />
                 <div className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 bg-purple-400 rounded-full blur-sm animate-pulse" />
 
-                {/* Main image container */}
                 <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/30 p-1">
                   <img
                     src="/heropic.png"
                     alt="Profile"
                     className="w-full h-full object-cover rounded-full"
                   />
-                  {/* Overlay shine effect */}
                   <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/10 to-transparent animate-shine" />
                 </div>
               </div>
@@ -372,22 +361,30 @@ const Portfolio = () => {
 
       {/* About Section */}
       <section id="about">
-        <About />
+        <ScrollAnimation>
+          <About />
+        </ScrollAnimation>
       </section>
 
       {/* Skills Section */}
       <section id="skills">
-        <Skills skills={skills} />
+        <ScrollAnimation>
+          <Skills skills={skills} />
+        </ScrollAnimation>
       </section>
 
       {/* Projects Section */}
       <section id="project">
-        <Project projects={projects} />
+        <ScrollAnimation>
+          <Project projects={projects} />
+        </ScrollAnimation>
       </section>
 
       {/* Contact Section */}
       <section id="contact">
-        <Contact />
+        <ScrollAnimation>
+          <Contact />
+        </ScrollAnimation>
       </section>
       {/* Footer */}
       <footer className="bg-gray-950 py-4 ">

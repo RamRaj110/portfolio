@@ -1,30 +1,38 @@
-import React from 'react'
+import React from "react";
+import { motion } from "framer-motion";
 
-function Skills({skills}) {
+const Skills = ({ skills }) => {
   return (
-    <div id='skills' className='bg-slate-900 '>
-       <section className="py-20  px-4" id="skills">
-        <h2 className="text-4xl font-bold border-white border-t-2 pt-4 text-white text-center mx-20 mb-16">My Skills</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          {skills.map((skill) => (
-            <div
+    <div className="bg-gray-800 py-16 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
+        <motion.h2
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-3xl font-extrabold text-white sm:text-4xl text-center mb-8"
+        >
+          My Skills
+        </motion.h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {skills.map((skill, index) => (
+            <motion.div
               key={skill.name}
-              className="group relative p-6 bg-gray-800 rounded-lg overflow-hidden hover:-translate-y-2 transition-transform duration-300"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-gray-700 rounded-lg p-6 hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="absolute inset-0 bg-gradient-to-r from-red-600 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300" />
-              <div className="relative space-y-4">
-                <div className="text-4xl">{skill.icon}</div>
-                <h3 className="text-xl text-white font-semibold">{skill.name}</h3>
-                <p className="text-gray-400">
-               {skill.description}
-                </p> 
-              </div>
-            </div>
+              <div className="text-4xl mb-4">{skill.icon}</div>
+              <h3 className="text-xl font-semibold text-white mb-2">
+                {skill.name}
+              </h3>
+              <p className="text-gray-300">{skill.description}</p>
+            </motion.div>
           ))}
         </div>
-      </section>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Skills;
