@@ -1,8 +1,6 @@
-
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
-import emailjs from '@emailjs/browser';
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -10,6 +8,7 @@ function Contact() {
     email: '',
     message: ''
   });
+  
   const [status, setStatus] = useState({
     loading: false,
     error: null,
@@ -28,28 +27,48 @@ function Contact() {
     e.preventDefault();
     setStatus({ loading: true, error: null, success: false });
 
+    const formDataToSend = {
+      access_key: '21232d55-2a17-4fac-bdab-c8ac1915426e',
+      subject: 'New Contact Form Submission',
+      from_name: formData.name,
+      name: formData.name,
+      email: formData.email,
+      message: formData.message,
+      // Add honeypot field
+      botcheck: '',
+      // Add spam prevention
+      'h-captcha-response': ''
+    };
+
     try {
-      await emailjs.send(
-        'service_idv40zx', // EmailJS service ID
-        'template_xx15gbu', // EmailJS template ID
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          message: formData.message,
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        'ARRv8mRO41VbPng8t' //  EmailJS public key
-      );
+        body: JSON.stringify(formDataToSend)
+      });
 
-      setStatus({ loading: false, error: null, success: true });
-      setFormData({ name: '', email: '', message: '' });
+      const data = await response.json();
       
-      // Reset success message after 3 seconds
-      setTimeout(() => {
-        setStatus(prev => ({ ...prev, success: false }));
-      }, 3000);
-
+      if (data.success) {
+        setStatus({ loading: false, error: null, success: true });
+        setFormData({ name: '', email: '', message: '' });
+        
+        setTimeout(() => {
+          setStatus(prev => ({ ...prev, success: false }));
+        }, 3000);
+      } else {
+        throw new Error(data.message || 'Something went wrong!');
+      }
     } catch (error) {
-      setStatus({ loading: false, error: 'Failed to send message. Please try again.', success: false });
+      console.error("Form submission error:", error);
+      setStatus({
+        loading: false,
+        error: error.message || 'Failed to send message. Please try again.',
+        success: false
+      });
     }
   };
 
@@ -81,7 +100,7 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Email</h3>
-                  <p className="text-gray-400">pawansham578.com</p>
+                  <p className="text-gray-400">pawansham578@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4">
@@ -90,11 +109,19 @@ function Contact() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-white">Location</h3>
-                  <p className="text-gray-400">Patna,Bihar</p>
+                  <p className="text-gray-400">Patna, Bihar</p>
                 </div>
               </div>
             </div>
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot field to prevent spam */}
+              <input 
+                type="checkbox" 
+                name="botcheck" 
+                className="hidden" 
+                style={{ display: 'none' }}
+              />
+              
               <div>
                 <input
                   type="text"
