@@ -1,16 +1,15 @@
 "use client";
-
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github, Send, Download } from "lucide-react";
-import Nav from "./component/nav";
-import Animation from "./component/Animation";
-import { About } from "./component/about";
-import Skills from "./component/skills";
-import Project from "./component/project";
-import Contact from "./component/contact";
-import ScrollAnimation from './component/ScrollAnimation';
+import Nav from "./Component/Nav";
+import Animation from "./Component/Animation";
+import { About } from "./Component/about";
+import Project from "./Component/project";
+import Contact from "./Component/contact";
+import ScrollAnimation from './Component/ScrollAnimation';
 import "./index.css";
+import Skills from "./component/Skills";
 
 // Constellation Background Component
 const ConstellationBackground = () => {
@@ -226,11 +225,11 @@ const Portfolio = () => {
       link: "#home",
     },
     {
-      title: "ChatBot",
+      title: "Currency Converter",
       description:
-        "Frontend developer for a college website chatbot, creating a user-friendly interface for seamless interaction.",
+      "Build a modern currency conversion application using React and Tailwind CSS. The app dynamically putlls real-time exchange rate data through an API , allowing users to accurately convert currencies between multiple options.Design an interface that is responsive, clean, and easy to use. Optimized for usability and accessibility.",
       tech: ["VanilaJs", "Python", "Flask", "CSS"],
-      image: "/cc.png",
+      image: "/Currency_Converter.png",
       link: "https://gitlab.com/edubot3/Chatbot",
     },
     {
@@ -334,7 +333,7 @@ const Portfolio = () => {
               transition={{ duration: 0.5 }}
               className="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center"
             >
-              <div className="relative w-40 h-40 xs:w-48 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
+              <div className="relative w-40 h-40 xs:w-4~8 xs:h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-72 lg:h-72">
                 <div className="absolute inset-0 rounded-full bg-blue-500/20 animate-ping-slow" />
                 <div className="absolute inset-2 rounded-full bg-purple-500/20 animate-spin-slow" />
 
