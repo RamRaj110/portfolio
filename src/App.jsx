@@ -2,14 +2,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { Linkedin, Github, Send, Download } from "lucide-react";
-import Nav from "./Component/Nav";
 import Animation from "./Component/Animation";
-import { About } from "./Component/about";
-import Project from "./Component/project";
-import Contact from "./Component/contact";
+import { About } from "./Component/About";
+import Project from "./Component/Project";
+import Nav from "./Component/Nav"
+import Contact from "./Component/Contact";
 import ScrollAnimation from './Component/ScrollAnimation';
 import "./index.css";
-import Skills from "./component/Skills";
+import Skills from "./Component/Skills";
 
 // Constellation Background Component
 const ConstellationBackground = () => {
