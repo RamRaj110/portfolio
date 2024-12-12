@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { Linkedin, Github, Send, Download } from "lucide-react";
+import { Linkedin, Github, Send, Download,Twitter } from "lucide-react";
 import Animation from "./Component/Animation";
 import { About } from "./Component/About";
 import Project from "./Component/Project";
@@ -321,6 +321,14 @@ const Portfolio = () => {
                     rel="noopener noreferrer"
                   >
                     <Github className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
+                  </a>
+                  <a
+                    href="https://x.com/PawanRajaryan2"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mx-4 first:ml-0"
+                  >
+                    <Twitter className="w-6 h-6 cursor-pointer hover:text-blue-600 transition-colors" />
                   </a>
                 </div>
               </motion.div>
